@@ -1,0 +1,15 @@
+<app-company-header></app-company-header>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row" *ngIf="errorMessage">
+                <div class="alert alert-danger">
+                    <h6>Something went wrong!</h6>
+                    <p>{{errorMessage}}</p>
+                    <button class="btn btn-danger" (click)="onClickDismissError()">Dismiss</button>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

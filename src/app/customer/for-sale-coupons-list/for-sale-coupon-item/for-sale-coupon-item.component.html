@@ -1,0 +1,15 @@
+<div class="card bg-light" style="cursor: pointer;">
+    <img class="img-fluid card-img-top" [src]="coupon.imageURL" alt="picture of the product should be here"
+        style="max-height: 200px;">
+    <div class="card-body">
+        <h4 class="card-title">{{coupon.title}}</h4>
+        <p class="card-text p-y-1">{{coupon.description}}</p>
+        <p class="card-text p-y-1">Start Date: {{coupon.startDate |date:'dd/MM/yyyy'}}</p>
+        <p class="card-text p-y-1" [ngClass]="{'expired': isGoingExpired()}">End Date: {{coupon.endDate
+            |date:'dd/MM/yyyy'}}
+        </p>
+        <p class="card-text p-y-1">Price: {{coupon.price}}$</p>
+        <button class="btn btn-success" (click)="onPurchaseCoupon()" [disabled]="soldOut">Purchase</button>
+        <p *ngIf="soldOut">Sorry but this coupon is out of stock</p>
+    </div>
+</div>

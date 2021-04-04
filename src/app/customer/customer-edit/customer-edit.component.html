@@ -1,0 +1,41 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="firstName">First name:</label>
+                    <input type="text" id="firstName" [(ngModel)]="customer.firstName" name="firstName"
+                        class="form-control" minlength="2" maxlength="30" required #fi="ngModel">
+                </div>
+                <p *ngIf="!fi.valid && fi.touched" class="help-block">Please enter a first name between 2 and 30
+                    characters</p>
+                <div class="form-group">
+                    <label for="lastName">Last name:</label>
+                    <input type="text" id="lastName" [(ngModel)]="customer.lastName" name="lastName"
+                        class="form-control" minlength="2" maxlength="30" required #l="ngModel">
+                </div>
+                <p *ngIf="!l.valid && l.touched" class="help-block">Please enter a last name between 2 and 30 characters
+                </p>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" [(ngModel)]="customer.email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" [(ngModel)]="customer.password" name="password"
+                        class="form-control" minlength="4" maxlength="12" required #p="ngModel">
+                </div>
+                <p *ngIf="!p.valid && p.touched" class="help-block">Please enter a password between 4 and 12 numbers or
+                    characters</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Done</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

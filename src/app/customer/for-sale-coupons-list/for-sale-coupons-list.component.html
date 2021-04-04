@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <h6 *ngIf="empty">There are no coupons for sale now. please try another time</h6>
+        <div class="card-columns">
+            <app-for-sale-coupon-item *ngFor="let c of coupons" [coupon]='c'>
+            </app-for-sale-coupon-item>
+        </div>
+    </div>
+</div>

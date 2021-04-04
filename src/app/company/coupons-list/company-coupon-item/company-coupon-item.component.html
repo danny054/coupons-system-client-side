@@ -1,0 +1,14 @@
+<div class="list-group-item ">
+    <a style="cursor: pointer;" >
+        <img [src]="coupon.imageURL" alt="picture of the product should be here" class="img-fluid"
+            style="max-height: 100px;">
+        <h6>{{coupon.title}}</h6>
+        <p>{{coupon.description}}</p>
+        <p>Category: {{coupon.category}}</p>
+        <p>Start Date: {{coupon.startDate |date:'dd/MM/yyyy'}}</p>
+        <p>End Date: {{coupon.endDate |date:'dd/MM/yyyy'}}</p>
+        <p>Price: {{coupon.price}}</p>
+        <p>Amount: {{coupon.amount}}</p>
+        <button class="btn btn-danger" (click)="onDeleteCoupon()">Delete</button>
+    </a>
+</div>

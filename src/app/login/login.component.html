@@ -1,0 +1,32 @@
+<div class="container background">
+    <div class="container form">
+        <form (ngSubmit)="onLogin()" #f="ngForm">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <h3>Wellcome to our site Coupons System!</h3>
+                        <p>How would you like to login:</p>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="customer" id="customer" autocomplete="off"
+                                value="customer" [(ngModel)]="type" checked>
+                            <label class="btn btn-outline-primary" for="customer">Customer</label>
+
+                            <input type="radio" class="btn-check" name="company" id="company" autocomplete="off"
+                                value="company" [(ngModel)]="type">
+                            <label class="btn btn-outline-primary" for="company">Company</label>
+
+                            <input type="radio" class="btn-check" name="admin" id="admin" autocomplete="off"
+                                value="admin" [(ngModel)]="type">
+                            <label class="btn btn-outline-primary" for="admin">Admin</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <button class="btn btn-primary" type="submit" [disabled]="!type">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

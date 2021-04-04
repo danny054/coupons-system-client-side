@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary" (click)="onNewCoupon()">Add Coupon</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <label for="sort">Sort by:</label>
+            <select class="form-select btn btn-outline-info btn-sm" id="sort" aria-label="Default select example"
+                (change)="selectChangeHandler($event.target.value)">
+                <option value="sales">Sales</option>
+                <option value="title">Title</option>
+                <option value="startDate">Start Date</option>
+                <option value="endDate">End Date</option>
+            </select>
+            <div class="row">
+                <app-company-coupon-item *ngFor="let c of coupons" [coupon]='c'
+                    class="list-group-item list-group-item-primary">
+                </app-company-coupon-item>
+            </div>
+        </div>
+    </div>
+</div>
